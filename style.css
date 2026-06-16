@@ -180,3 +180,13 @@ body {
     font-size: 5rem;
     margin-bottom: 20px;
 }
+
+/* Fade Out Animation for Clicked Buttons */
+.fade-out {
+    animation: popOut 0.5s ease-in forwards;
+}
+
+@keyframes popOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
