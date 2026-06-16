@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    overflow-x: hidden; 
+    background-image: conic-gradient(
+        #1E1E2F 90deg,
+        #4a4a79 90deg 180deg,
+        #1E1E2F 180deg 270deg,
+        #4a4a79 270deg
+    );
+    background-size: 100px 100px;
+    animation: cascade 4s linear infinite;
+    font-family: "Lilita One";
+}
+
+/* Layout Container */
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Progress Bar */
+.prog {
+    grid-column: span 2;
+    width: 100%;
+    height: 50px;
+    background-color: #1E1E2F;
+    border: 2px solid #1E1E2F;
+    box-shadow: 0 8px 0 #151522, 0 8px 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 50px;
+    position: relative;
+}
+
+.progress-bar {
+    font-size: 20px;
+    background-color: #5b5b97;
+    color: #1f1f2c;
+    border-radius: 50px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transition: width 0.1s linear;
+}
+
+/* Clicker Button */
+.coping-clicker-btn {
+    font-family: "Lilita One";
+    background-color: #5b5b97;
+    color: #1f1f2c;
+    border: 2px solid #1E1E2F;
+    width: 90%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none; 
+    box-shadow: 0 8px 0 #151522, 0 8px 15px rgba(0, 0, 0, 0.5); 
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coping-clicker-btn:hover { background-color: #4f4f80; }
+
+.coping-clicker-btn:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 #151522, 0 0 10px rgba(102, 64, 105, 0.2); 
+}
+
+.coping-clicker-btn .count { font-size: 20px; }
+
+/* Scrollable List Container */
+.cont {
+    background-color: #5b5b97;
+    color: #1f1f2c;
+    border: 2px solid #1E1E2F;
+    width: 100%;
+    height: 600px;
+    max-width: 600px;
+    border-radius: 50px;
+    box-shadow: 0 8px 0 #151522, 0 8px 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin: auto;
+}
+
+.cont::-webkit-scrollbar { display: none; }
+
+.cont ul { list-style-type: none; padding: 20px; }
+
+.cont ul .good button, .cont ul .bad button {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 50px;
+    width: 100%;
+    font-family: "Lilita One";
+    cursor: pointer;
+    border: 2px solid #1E1E2F;
+}
+
+.cont ul .good button { background-color: #7b7bb5; color: #1f1f2c; }
+.cont ul .bad button { background-color: #41415c; color: #7b7bb5; border-color: #7b7bb5; }
+
+.cont ul button:active { transform: translateY(4px); }
+
+/* Utility */
+.locked { display: none; }
+.fade-in { animation: popIn 0.5s ease-out forwards; }
+
+@keyframes cascade {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 0px 80px; }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Add to the end of style.css */
+
+.grayscale {
+    filter: grayscale(100%);
+    transition: filter 1s ease;
+}
+
+#ending-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in { opacity: 1 !important; display: flex !important; }
+
+#ending-text {
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 1s ease;
+}
+
+.bad-ending-title {
+    color: red;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+/* Add to style.css */
+
+.good-ending-title {
+    color: #4caf50; /* Green color for success */
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+/* Add to style.css */
+
+.neutral-ending-title {
+    color: orange;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow-x: hidden; 
+    background-image: conic-gradient(
+        #1E1E2F 90deg,
+        #4a4a79 90deg 180deg,
+        #1E1E2F 180deg 270deg,
+        #4a4a79 270deg
+    );
+    background-size: 100px 100px;
+    animation: cascade 4s linear infinite;
+    font-family: "Lilita One";
+    text-align: center;
+}
+
+@keyframes cascade {
+      0% {
+        background-position: 0px 0px;
+      }
+      100% {
+        /* Moves exactly one cluster size down (80px) to loop perfectly */
+        background-position: 0px 80px; 
+      }
+    }
+
+    
+h1 {
+    color: #5b5b97;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 150px;
+
+}
+
+.contain button {
+    font-family: "Lilita One";
+    font-size: 30px;
+    margin-bottom: 40px;
+        width: 100%;
+    height: 50px;
+    background-color: #5b5b97;
+    color: #1f1f2c;
+    border: 2px solid #1E1E2F;
+    box-shadow: 0 8px 0 #151522, 0 8px 15px rgba(0, 0, 0, 0.5); 
+    border-radius: 50px;
+    position: relative;
+}
+
+.contain button:hover {
+background-color: #4f4f80
+}
+
+.contain button:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 #151522, 0 0 10px rgba(102, 64, 105, 0.2); 
+}
+
